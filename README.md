@@ -2,6 +2,10 @@
 
 This project implements a **Plinko** game smart contract on the **Solana** blockchain using Anchor framework. Players drop balls into a Plinko board, and rewards are determined based on the landing bucket. The game integrates randomness via the Orao VRF Oracle to ensure fairness and transparency.
 
+[![Telegram](https://img.shields.io/badge/Telegram-@toptrendev_146-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/TopTrenDev_66)
+[![Twitter](https://img.shields.io/badge/Twitter-@toptrendev-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/toptrendev)
+[![Discord](https://img.shields.io/badge/Discord-toptrendev-5865F2?style=for-the-badge&logo=discord)](https://discord.com/users/648385188774019072)
+
 ---
 
 ## 🚀 Features
@@ -71,20 +75,3 @@ anchor deploy
 ```
 anchor test --skip-build --skip-deploy
 ```
-
----
-
-## 🤝 Contributing
-
-Feel free to open issues or PRs to improve this contract!
-
-[![Telegram](https://img.shields.io/badge/Telegram-@toptrendev_146-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/TopTrenDev_66)
-[![Twitter](https://img.shields.io/badge/Twitter-@toptrendev-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/toptrendev)
-[![Discord](https://img.shields.io/badge/Discord-toptrendev-5865F2?style=for-the-badge&logo=discord)](https://discord.com/users/648385188774019072)
-
----
-
-## 📌 Notes
-
-This contract is experimental and should be audited before production use.
-
