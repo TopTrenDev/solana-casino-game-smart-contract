@@ -1,77 +1,94 @@
-# 🎲 Solana Plinko Game Smart Contract
+# 🎰 Solana Casino Games – Smart Contract Suite
 
-This project implements a **Plinko** game smart contract on the **Solana** blockchain using Anchor framework. Players drop balls into a Plinko board, and rewards are determined based on the landing bucket. The game integrates randomness via the Orao VRF Oracle to ensure fairness and transparency.
+A **production‑grade collection of Solana casino game smart contracts**, built with **Anchor** and designed for **fairness, security, and composability**.
 
-[![Telegram](https://img.shields.io/badge/Telegram-@toptrendev_66-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/TopTrenDev_66)
-[![Twitter](https://img.shields.io/badge/Twitter-@toptrendev-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/toptrendev)
-[![Discord](https://img.shields.io/badge/Discord-toptrendev-5865F2?style=for-the-badge&logo=discord)](https://discord.com/users/648385188774019072)
+This repository contains multiple on‑chain casino games such as **Plinko, Jackpot, Coinflip, Dice, and Roulette**, written in Rust and optimized for real‑world deployment on Solana.
 
----
-
-## 🚀 Features
-
-- 🪙 On-chain Solana smart contract for Plinko gameplay.
-
-- 🔑 Secure account management using PDAs (Program Derived Addresses).
-
-- 🎰 Verifiable randomness using Orao VRF Oracle.
-
-- 📈 Track player stats (total won, buckets hit, etc).
-
-- 🏦 House account logic for managing payouts and balance.
-
-- ⚡ Efficient SOL transfers using system instructions with PDA signing.
-
-- ✅ Tested and structured using Anchor framework.
+Whether you're building a full casino platform, experimenting with on‑chain randomness, or learning advanced Solana patterns (PDAs, CPI, VRF, escrow, vaults), this repo is designed to be a strong foundation.
 
 ---
 
-## ⚙️ How It Works
+## ✨ Key Features
 
-- Start a game
-
-The player calls play_game, placing a bet and specifying parameters (e.g., number of balls).
-
-- Request randomness
-
-The contract makes a request to Orao VRF.
-
-- Fulfill randomness
-
-Orao VRF provides random numbers; the contract processes them via fulfill_random_words.
-
-- Determine payouts
-
-Based on bucket indexes, payouts are computed and distributed between player and house.
-
-- Update stats
-
-Game, house, and user statistics are updated on-chain.
+- 🧠 **Provably Fair Game Logic**
+- 🔐 **Secure Vault & Treasury Management**
+- 🎲 **On‑chain Randomness (VRF‑ready)**
+- ⚡ **Low‑latency, high‑throughput Solana execution**
+- 🧩 **Modular & Extensible Architecture**
+- 🧪 **Test‑driven with Anchor test suite**
+- 🛠 **Production‑oriented account design (PDAs, seeds, bumps)**
 
 ---
 
-## 📸 Screenshot
+## 🎮 Games Included
 
-![App Preview](assets/Screenshot.png)
+| Game         | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| **Plinko**   | Ball drop game with configurable risk and payout multipliers |
+| **Coinflip** | Simple 50/50 wager game                                      |
+| **Dice**     | Roll‑based game with adjustable win probability              |
+| **Roulette** | Classic roulette mechanics adapted for on‑chain execution    |
+| **Jackpot**  | Pooled betting game with winner‑takes‑all logic              |
+
+> Each game is implemented as an **independent Anchor program** or **isolated module**, allowing easy reuse or selective deployment.
 
 ---
 
-## 🔑 Example Deployment
+## 🎲 Randomness Strategy
 
-- Build the program
+This repo is designed to support **secure randomness**, including:
 
-```
-anchor build
-```
+- ⚠️ Pseudo‑random fallback (for local testing)
+- 🔮 **VRF integration ready** (e.g. Orao, Switchboard)
+- ⛓ Seed‑based entropy using blockhash + user input (non‑VRF modes)
 
-- Deploy to localnet or devnet
+> **Important:** For mainnet deployment, **VRF is strongly recommended** to prevent manipulation.
 
-```
-anchor deploy
-```
+---
 
-- 🧪 Running Tests
+## 💰 Betting & Payout Flow
 
-```
-anchor test --skip-build --skip-deploy
-```
+1. Player submits bet + parameters
+2. Funds transferred to game vault PDA
+3. Random outcome is generated
+4. Win/loss is calculated on‑chain
+5. Payout (if any) sent back to player
+6. House edge retained in treasury
+
+All calculations are performed **fully on‑chain**.
+
+---
+
+## 🔐 Security Notes
+
+- ✔ Checked arithmetic (no overflows)
+- ✔ PDA‑only vault ownership
+- ✔ Explicit signer checks
+- ✔ Configurable max bet & limits
+
+> ⚠️ **This repo has not been audited.** Use at your own risk for mainnet deployments.
+
+---
+
+## 🧩 Extending the Repo
+
+You can easily add new games by:
+
+1. Creating a new Anchor program
+2. Reusing the shared vault & randomness utilities
+3. Defining game‑specific payout logic
+
+Examples:
+
+- Blackjack
+- Baccarat
+- Crash game
+- Slots
+
+---
+
+## ⭐ Support
+
+If you find this project useful, consider **starring the repo** ⭐
+
+Happy building on Solana 🚀
