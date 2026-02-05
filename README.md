@@ -6,6 +6,10 @@ This repository contains multiple on‑chain casino games such as **Plinko, Jack
 
 Whether you're building a full casino platform, experimenting with on‑chain randomness, or learning advanced Solana patterns (PDAs, CPI, VRF, escrow, vaults), this repo is designed to be a strong foundation.
 
+[![Telegram](https://img.shields.io/badge/Telegram-@toptrendev_66-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/TopTrenDev_66)
+[![Twitter](https://img.shields.io/badge/Twitter-@toptrendev-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/toptrendev)
+[![Discord](https://img.shields.io/badge/Discord-toptrendev-5865F2?style=for-the-badge&logo=discord)](https://discord.com/users/648385188774019072)
+
 ---
 
 ## ✨ Key Features
