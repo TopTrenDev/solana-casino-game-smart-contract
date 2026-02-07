@@ -1,0 +1,26 @@
+[package]
+name = "solbet-jackpot-smart-contract-update"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "solbet_jackpot_smart_contract_update"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+
+
+[dependencies]
+anchor-client = { version = "0.31.1", optional = true }
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+orao-solana-vrf = { version = "0.6.1", default-features = false, features = [
+  "cpi",
+] }
+solana-program = "2.1.20"
