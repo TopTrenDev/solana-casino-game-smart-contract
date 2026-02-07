@@ -25,7 +25,7 @@ use instructions::{
 declare_id!("3x4QwXtG3mCjYe6WYHuHacmHqkJjcNo3znkmprCESxzB");
 
 #[program]
-pub mod solbet_jackpot_smart_contract {
+pub mod solana_jackpot_smart_contract {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>, input: ConfigInput) -> Result<()> {

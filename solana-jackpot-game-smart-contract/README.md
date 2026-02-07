@@ -1,4 +1,4 @@
-# 🎰 SolBet Jackpot Game - Solana Smart Contract
+# Solana Jackpot Game - Solana Smart Contract
 
 A **secure and provably fair Jackpot game smart contract** built on **Solana** using the **Anchor framework** (v0.31.1) and **Rust**. This contract implements a time-based jackpot game where players deposit SOL into rounds, and winners are selected using **Orao VRF** (Verifiable Random Function) for provably fair randomness.
 
@@ -42,6 +42,7 @@ The program follows standard Anchor framework structure with separate modules fo
 ### Core Accounts
 
 The contract uses Program Derived Addresses (PDAs) for secure account management:
+
 - **Config Account** - Stores global configuration and settings
 - **Vault Account** - Holds all player deposits for each round
 - **Game Round Account** - Tracks round-specific data and state
@@ -55,11 +56,13 @@ The contract uses Program Derived Addresses (PDAs) for secure account management
 Initializes the contract with configuration parameters.
 
 **Parameters:**
+
 - `team_wallet`: Pubkey - Wallet to receive platform fees
 - `platform_fee`: u64 - Fee in basis points (10000 = 100%)
 - `round_duration`: i64 - Round duration in seconds
 
 **Accounts:**
+
 - `admin`: Signer - Contract administrator
 - `config`: Config account
 
@@ -72,10 +75,12 @@ Initializes the contract with configuration parameters.
 Creates a new game round and requests VRF randomness.
 
 **Parameters:**
+
 - `force`: [u8; 32] - VRF force parameter
 - `roundIndex`: u64 - Round number
 
 **Accounts:**
+
 - `admin`: Signer - Contract administrator
 - `config`: Config account
 - `round_acc`: Game round account
@@ -84,6 +89,7 @@ Creates a new game round and requests VRF randomness.
 **Access Control:** Admin only
 
 **Requirements:**
+
 - Previous round must be completed
 - Round index must be sequential
 
@@ -94,21 +100,25 @@ Creates a new game round and requests VRF randomness.
 Allows players to join the current round by depositing SOL.
 
 **Parameters:**
+
 - `roundIndex`: u64 - Current round number
 - `amount`: u64 - Deposit amount in lamports
 
 **Accounts:**
+
 - `user`: Signer - Player joining the round
 - `config`: Config account
 - `vault`: Vault account
 - `round_acc`: Game round account
 
 **Requirements:**
+
 - `amount > 0`
 - Round must not be expired
 - Round must be active
 
 **Behavior:**
+
 - First deposit starts the round timer
 - SOL is transferred to vault
 - Deposit is recorded in the round
@@ -120,10 +130,12 @@ Allows players to join the current round by depositing SOL.
 Selects the winner using Orao VRF randomness.
 
 **Parameters:**
+
 - `force`: [u8; 32] - VRF force parameter
 - `roundIndex`: u64 - Round number
 
 **Accounts:**
+
 - `admin`: Signer - Contract administrator
 - `config`: Config account
 - `round_acc`: Game round account
@@ -132,6 +144,7 @@ Selects the winner using Orao VRF randomness.
 **Access Control:** Admin only
 
 **Requirements:**
+
 - VRF randomness must be fulfilled
 - Round must have deposits
 - Round must not be completed
@@ -143,9 +156,11 @@ Selects the winner using Orao VRF randomness.
 Allows the winner to claim their reward.
 
 **Parameters:**
+
 - `roundIndex`: u64 - Round number
 
 **Accounts:**
+
 - `admin`: Signer - Contract administrator
 - `winner`: Winner's wallet
 - `config`: Config account
@@ -163,9 +178,11 @@ Allows the winner to claim their reward.
 Transfers remaining fees from vault to team wallet.
 
 **Parameters:**
+
 - `roundIndex`: u64 - Round number
 
 **Accounts:**
+
 - `admin`: Signer - Contract administrator
 - `config`: Config account
 - `round_acc`: Game round account
@@ -175,6 +192,7 @@ Transfers remaining fees from vault to team wallet.
 **Access Control:** Admin only
 
 **Behavior:**
+
 - Transfers remaining fees from vault to team wallet
 - Marks round as completed to allow next round
 
@@ -247,19 +265,19 @@ The contract uses **Orao Network's VRF** for provably fair, verifiable on-chain 
 
 ## 🐛 Error Codes
 
-| Error Code | Description |
-|------------|-------------|
-| `InvalidAuthority` | Caller is not the admin |
-| `RoundDurationIsOver` | Round has expired |
-| `RoundAlreadyCompleted` | Round is already completed |
-| `InvalidRoundCounter` | Round index mismatch |
-| `InvalidAmount` | Invalid deposit amount |
-| `Overflow` | Arithmetic overflow |
-| `WinnerAlreadySet` | Winner already selected |
-| `RoundIsCompleted` | Round is completed |
-| `NotWinner` | Caller is not the winner |
-| `WinnerNotSet` | Winner has not been set yet |
-| `StillProcessing` | VRF randomness not yet fulfilled |
+| Error Code              | Description                      |
+| ----------------------- | -------------------------------- |
+| `InvalidAuthority`      | Caller is not the admin          |
+| `RoundDurationIsOver`   | Round has expired                |
+| `RoundAlreadyCompleted` | Round is already completed       |
+| `InvalidRoundCounter`   | Round index mismatch             |
+| `InvalidAmount`         | Invalid deposit amount           |
+| `Overflow`              | Arithmetic overflow              |
+| `WinnerAlreadySet`      | Winner already selected          |
+| `RoundIsCompleted`      | Round is completed               |
+| `NotWinner`             | Caller is not the winner         |
+| `WinnerNotSet`          | Winner has not been set yet      |
+| `StillProcessing`       | VRF randomness not yet fulfilled |
 
 ---
 
@@ -268,7 +286,7 @@ The contract uses **Orao Network's VRF** for provably fair, verifiable on-chain 
 ```rust
 // Initialize with:
 team_wallet: <team_pubkey>
-platform_fee: 500        
+platform_fee: 500
 round_duration: 60
 min_deposit_amount: 10_000
 ```
@@ -291,10 +309,12 @@ min_deposit_amount: 10_000
 ## 📚 Dependencies
 
 ### Rust Dependencies
+
 - `anchor-lang`: 0.31.1
 - `orao-solana-vrf`: 0.6.1
 - `solana-program`: 2.1.20
 
 ### TypeScript Dependencies
+
 - `@coral-xyz/anchor`: ^0.31.1
 - `@orao-network/solana-vrf`: ^0.6.1
