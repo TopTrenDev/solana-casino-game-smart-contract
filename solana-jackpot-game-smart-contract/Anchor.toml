@@ -7,7 +7,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-solbet_jackpot_smart_contract_update = "3x4QwXtG3mCjYe6WYHuHacmHqkJjcNo3znkmprCESxzB"
+solana_jackpot_smart_contract_update = "3x4QwXtG3mCjYe6WYHuHacmHqkJjcNo3znkmprCESxzB"
 
 [registry]
 url = "https://api.devnet.solana.com"

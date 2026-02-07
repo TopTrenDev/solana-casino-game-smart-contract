@@ -5668,7 +5668,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solbet-jackpot-smart-contract-update"
+name = "solana-jackpot-smart-contract-update"
 version = "0.1.0"
 dependencies = [
  "anchor-client",
