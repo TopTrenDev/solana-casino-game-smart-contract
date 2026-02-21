@@ -1,5 +1,3 @@
-//! Initialize house: vault PDA and config. Called once by authority.
-
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::system_instruction;
 
@@ -40,7 +38,6 @@ pub fn handler(ctx: Context<InitializeHouse>, fee_bps: u16) -> Result<()> {
     house.bump = ctx.bumps.house;
     house.vault_bump = ctx.bumps.vault;
 
-    // Create vault PDA so it can receive SOL (system-owned, 0 space, rent-exempt)
     let vault = &ctx.accounts.vault;
     let house_key = house.key();
     let seeds = &[b"vault", house_key.as_ref(), &[house.vault_bump]];
