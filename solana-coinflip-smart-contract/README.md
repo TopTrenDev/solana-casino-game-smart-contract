@@ -2,6 +2,9 @@
 
 A minimal, on-chain **coinflip game** for Solana built with Anchor. Players stake SOL, pick heads or tails, and the program resolves the flip deterministically. Winners get **2× stake** minus an optional house fee.
 
+[![Telegram](https://img.shields.io/badge/Telegram-@toptrendev_66-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/TopTrenDev_66)
+[![Twitter](https://img.shields.io/badge/Twitter-@toptrendev-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/toptrendev)
+
 ---
 
 ## 📋 Table of Contents
@@ -13,7 +16,6 @@ A minimal, on-chain **coinflip game** for Solana built with Anchor. Players stak
 - [Getting Started](#-getting-started)
 - [Client Integration](#-client-integration)
 - [Security & Design Notes](#-security--design-notes)
-- [License](#-license)
 
 ---
 
