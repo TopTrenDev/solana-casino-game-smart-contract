@@ -1,4 +1,4 @@
-# 🎲 Solana Plinko Game Smart Contract
+# Solana Plinko Game Smart Contract
 
 This project implements a **Plinko** game smart contract on the **Solana** blockchain using Anchor framework. Players drop balls into a Plinko board, and rewards are determined based on the landing bucket. The game integrates randomness via the Orao VRF Oracle to ensure fairness and transparency.
 
