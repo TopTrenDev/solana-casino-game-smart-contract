@@ -2,6 +2,10 @@
 
 A Solana program (Anchor) for a provably fair dice-style casino game. Players bet on a target number (under/over) and the operator resolves each round. SOL is held in PDAs until the result is set.
 
+[![Telegram](https://img.shields.io/badge/Telegram-@toptrendev_66-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/TopTrenDev_66)
+[![Twitter](https://img.shields.io/badge/Twitter-@toptrendev-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/toptrendev)
+[![Discord](https://img.shields.io/badge/Discord-toptrendev-5865F2?style=for-the-badge&logo=discord)](https://discord.com/users/648385188774019072)
+
 ## Features
 
 - **Under/Over dice**: Player picks a target number (e.g. 50) and bets “under” or “over”; payout is derived from probability and configurable RTP.
