@@ -1,0 +1,22 @@
+{
+  "name": "crash-house",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "anchor test",
+    "lint": "prettier \"**/*.{js,ts}\" --check"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@noble/hashes": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "prettier": "^3.0.0",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^5.3.3"
+  }
+}
